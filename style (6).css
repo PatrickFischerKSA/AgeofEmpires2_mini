@@ -1,0 +1,47 @@
+
+body {
+  background:#0b1120;
+  color:white;
+  font-family:sans-serif;
+  padding:20px;
+}
+
+.panel {
+  padding:10px;
+  background:#111827;
+  border-radius:8px;
+  width:2100px;
+}
+
+#minimap {
+  display:grid;
+  grid-template-columns: repeat(256, 8px);
+  grid-template-rows: repeat(256, 8px);
+  width:2048px;
+  height:2048px;
+  border:2px solid #334155;
+  margin-bottom:10px;
+}
+
+.minimap-tile {
+  width:8px;
+  height:8px;
+  cursor:pointer;
+}
+
+.tile-grass  { background:#16a34a; }
+.tile-forest { background:#065f46; }
+.tile-gold   { background:#facc15; }
+.tile-stone  { background:#6b7280; }
+.tile-water  { background:#0ea5e9; }
+.tile-player { background:#06b6d4; }
+.tile-enemy  { background:#db2777; }
+
+#log {
+  background:black;
+  height:180px;
+  overflow-y:auto;
+  padding:5px;
+  font-size:13px;
+  width:2048px;
+}
