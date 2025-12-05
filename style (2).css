@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:#020617;
+  color:#e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding:16px;
+}
+
+h1 {
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+#status-bar {
+  margin-bottom:12px;
+  font-size:13px;
+}
+
+.res-icon {
+  margin:0 4px;
+}
+
+#game {
+  display:grid;
+  grid-template-columns:2.1fr 3fr 2.3fr;
+  gap:12px;
+}
+
+/* Panels */
+
+.panel {
+  background:#020617;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #1f2937;
+  box-shadow:0 10px 25px rgba(0,0,0,0.45);
+}
+
+.panel h2 {
+  font-size:18px;
+  margin-bottom:6px;
+  border-bottom:1px solid #1f2937;
+  padding-bottom:4px;
+}
+
+.section-title {
+  margin-top:8px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.row {
+  display:flex;
+  justify-content:space-between;
+  margin:2px 0;
+  font-size:13px;
+}
+
+.label {
+  color:#9ca3af;
+}
+
+.value {
+  font-weight:600;
+}
+
+/* Buttons */
+
+button {
+  width:100%;
+  padding:6px 8px;
+  margin:3px 0;
+  border-radius:7px;
+  border:none;
+  background:#1d4ed8;
+  color:#f9fafb;
+  font-size:13px;
+  cursor:pointer;
+  transition:background 0.15s ease, transform 0.05s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  background:#2563eb;
+  box-shadow:0 3px 8px rgba(37,99,235,0.5);
+}
+
+button:active {
+  transform:scale(0.98);
+  box-shadow:none;
+}
+
+button:disabled {
+  background:#4b5563;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+
+/* HP Bars */
+
+.hp-bar-container {
+  margin-top:4px;
+  background:#111827;
+  border-radius:999px;
+  overflow:hidden;
+  height:12px;
+}
+
+.hp-bar {
+  height:100%;
+  background:#22c55e;
+  width:100%;
+}
+
+.hp-bar.enemy {
+  background:#ef4444;
+}
+
+/* Log */
+
+#log {
+  background:#000;
+  border:1px solid #1f2937;
+  border-radius:6px;
+  height:260px;
+  overflow-y:auto;
+  padding:4px;
+  font-size:12px;
+  margin-top:4px;
+}
+
+#log div {
+  margin-bottom:2px;
+}
+
+.log-system { color:#9ca3af; }
+.log-good { color:#22c55e; }
+.log-bad { color:#f97316; }
+.log-danger { color:#f87171; }
+
+/* Minimap */
+
+#minimap {
+  margin-top:6px;
+  margin-bottom:4px;
+  width:160px;
+  height:160px;
+  display:grid;
+  grid-template-columns:repeat(16, 1fr);
+  grid-template-rows:repeat(16, 1fr);
+  border-radius:6px;
+  overflow:hidden;
+  border:1px solid #1f2937;
+}
+
+.minimap-tile {
+  width:100%;
+  height:100%;
+  cursor:pointer;
+}
+
+/* Terrainfarben */
+
+.tile-grass    { background:#16a34a; }  /* hellgrün */
+.tile-forest   { background:#065f46; }  /* dunkelgrün */
+.tile-gold     { background:#facc15; }  /* gelb */
+.tile-stone    { background:#6b7280; }  /* grau */
+.tile-water    { background:#0ea5e9; }  /* blau */
+.tile-player   { background:#06b6d4; }  /* cyan */
+.tile-enemy    { background:#db2777; }  /* magenta */
+
+/* Kleinteile */
+
+.small {
+  font-size:11px;
+  color:#9ca3af;
+  margin-top:4px;
+}
+
+/* Setup-Overlay */
+
+#setup-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,0.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:50;
+}
+
+.setup-panel {
+  background:#020617;
+  border-radius:12px;
+  padding:16px;
+  border:1px solid #1f2937;
+  box-shadow:0 20px 40px rgba(0,0,0,0.7);
+  max-width:720px;
+  width:100%;
+}
+
+.setup-panel h2 {
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.setup-panel p {
+  font-size:13px;
+  color:#9ca3af;
+  margin-bottom:8px;
+}
+
+.setup-section {
+  margin-top:10px;
+}
+
+.setup-section h3 {
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.setup-grid {
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:6px;
+}
+
+.setup-btn {
+  text-align:left;
+  font-size:12px;
+  line-height:1.3;
+}
+
+.setup-btn strong {
+  font-size:13px;
+}
+
+.setup-btn.selected {
+  outline:2px solid #22c55e;
+  background:#1e40af;
+}
+
+.setup-summary {
+  margin-top:10px;
+  font-size:13px;
+}
+
+#setup-start-btn {
+  margin-top:8px;
+}
+
+/* Scrollbar (optional, schönere Optik) */
+
+#log::-webkit-scrollbar,
+#minimap::-webkit-scrollbar {
+  width:6px;
+}
+
+#log::-webkit-scrollbar-thumb,
+#minimap::-webkit-scrollbar-thumb {
+  background:#4b5563;
+  border-radius:999px;
+}
